@@ -6,60 +6,76 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 23:16:26 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/22 23:49:02 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/23 02:39:56 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "mainheader.hpp"
+
+Contact	filling()
+{
+	Contact element;
+
+	std::cout << "First name: ";
+	std::cin >> element.first_name;
+	
+
+	std::cout << "Last name: ";
+	std::cin >> element.last_name;
+	
+
+	std::cout << "Nickname: ";
+	std::cin >> element.nickname;
+	
+
+	std::cout << "Login: ";
+	std::cin >> element.login;
+	
+
+	std::cout << "Postal address: ";
+	std::cin >> element.postal_address;
+	
+
+	std::cout << "Email address: ";
+	std::cin >> element.email_address;
+	
+
+	std::cout << "Phone number: ";
+	std::cin >> element.phone_number;
+	
+
+	std::cout << "Birthday date: ";
+	std::cin >> element.birthdat_date;
+	
+
+	std::cout << "Favorite meal: ";
+	std::cin >> element.favorite_meal;
+	
+
+	std::cout << "Underwear color: ";
+	std::cin >> element.underwear_color;
+	
+
+	std::cout << "Darkest secret: ";
+	std::cin >> element.darkest_secret;
+	element.init = true;	
+
+	return (element);
+}
 
 void	add(Contact *list)
 {
-	int		i;
-
-	i = 0;
-	while (i < 8 || list[i].init != false)
-		i++;
-	std::cout << "First name: ";
-	std::cin >> list[i].first_name;
-	std::cout << '\n';
-
-	std::cout << "Last name: ";
-	std::cin >> list[i].last_name;
-	std::cout << '\n';
-
-	std::cout << "Nickname: ";
-	std::cin >> list[i].nickname;
-	std::cout << '\n';
-
-	std::cout << "Login: ";
-	std::cin >> list[i].login;
-	std::cout << '\n';
-
-	std::cout << "Postal address: ";
-	std::cin >> list[i].postal_address;
-	std::cout << '\n';
-
-	std::cout << "Email address: ";
-	std::cin >> list[i].email_address;
-	std::cout << '\n';
-
-	std::cout << "Phone number: ";
-	std::cin >> list[i].phone_number;
-	std::cout << '\n';
-
-	std::cout << "Birthday date: ";
-	std::cin >> list[i].birthdat_date;
-	std::cout << '\n';
-
-	std::cout << "Favorite meal: ";
-	std::cin >> list[i].favorite_meal;
-	std::cout << '\n';
-
-	std::cout << "Underwear color: ";
-	std::cin >> list[i].underwear_color;
-	std::cout << '\n';
-
-	std::cout << "Darkest secret: ";
-	std::cin >> list[i].darkest_secret;
-	std::cout << '\n';
+	for (int i = 0; i < 8; i++)
+	{
+		if (list[i].init == false)
+		{
+			list[i] = filling(); 
+			break ;
+		}
+		else if (i == 0)
+		{
+			std::cout << "There is not space :(\n";
+			break ;
+		}
+	}
 }

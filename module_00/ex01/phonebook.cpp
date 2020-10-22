@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 22:10:43 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/22 22:53:26 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/22 23:47:44 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		main()
 		std::cout << "The available commands: ADD, SEARCH, EXIT\n";
 		std::cin >> command;
 		if (command == "ADD")
-			add();
+			add(list);
 		else if (command == "SEARCH")
 			search();
 		else if (command == "EXIT")

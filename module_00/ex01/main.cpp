@@ -6,11 +6,29 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 22:10:43 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 04:06:14 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/23 05:32:30 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mainheader.hpp"
+
+void	add(Contact *list)
+{
+	for (int i = 0; i < 8; i++)
+	{
+		if (list[i].is_init() == false)
+		{
+			list[i].filling();
+			list[i].check_name();
+			break ;
+		}
+		else if (i == 7)
+		{
+			std::cout << "There is not space :(\n";
+			break ;
+		}
+	}
+}
 
 int		main()
 {

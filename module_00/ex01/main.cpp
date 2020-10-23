@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 22:10:43 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 02:38:53 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/23 04:06:14 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int		main()
 		{
 			add(list);
 		}
-		/*else if (command == "SEARCH")
-			search();
+		else if (command == "SEARCH")
+			search(list);
 		else if (command == "EXIT")
-			just_exit();
+			return (0);
 		else
-			continue ;*/
+			continue ;
 	}
 	return (0);
 }

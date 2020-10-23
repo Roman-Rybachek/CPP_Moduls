@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 23:16:26 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 02:39:56 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/23 02:55:27 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	add(Contact *list)
 			list[i] = filling(); 
 			break ;
 		}
-		else if (i == 0)
+		else if (i == 7)
 		{
 			std::cout << "There is not space :(\n";
 			break ;

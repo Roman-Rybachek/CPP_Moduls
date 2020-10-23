@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 23:16:26 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 02:55:27 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/23 04:07:56 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,43 +19,33 @@ Contact	filling()
 	std::cout << "First name: ";
 	std::cin >> element.first_name;
 	
-
 	std::cout << "Last name: ";
 	std::cin >> element.last_name;
-	
 
 	std::cout << "Nickname: ";
 	std::cin >> element.nickname;
-	
 
 	std::cout << "Login: ";
 	std::cin >> element.login;
-	
 
 	std::cout << "Postal address: ";
 	std::cin >> element.postal_address;
-	
 
 	std::cout << "Email address: ";
 	std::cin >> element.email_address;
-	
 
 	std::cout << "Phone number: ";
 	std::cin >> element.phone_number;
 	
-
 	std::cout << "Birthday date: ";
 	std::cin >> element.birthdat_date;
 	
-
 	std::cout << "Favorite meal: ";
 	std::cin >> element.favorite_meal;
 	
-
 	std::cout << "Underwear color: ";
 	std::cin >> element.underwear_color;
 	
-
 	std::cout << "Darkest secret: ";
 	std::cin >> element.darkest_secret;
 	element.init = true;	

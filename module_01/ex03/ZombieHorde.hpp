@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/23 08:08:20 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 22:15:37 by jeldora          ###   ########.fr       */
+/*   Created: 2020/10/24 00:10:37 by jeldora           #+#    #+#             */
+/*   Updated: 2020/10/24 00:37:25 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#ifndef ZOMBIEHORDE_HPP
+#define ZOMBIEHORDE_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-
-class Pony
+class ZombieHorde
 {
 	private:
-		std::string		p_name;
-		int				p_legs;
-		int				p_heads;
-		int				p_tails;
-		int				p_eyes;
-
+		Zombie *horde;
+		int		count;
 	public:
-		void			set_legs(int count);
-		void			set_heads(int count);
-		void			set_tails(int count);
-		void			set_eyes(int count);	
-		
-		Pony(std::string name, int legs, int heads, int tails, int eyes);
-		~Pony();
-		void	run();
+		void	announce();
+				ZombieHorde(int n);
+				~ZombieHorde();
 };
 
 #endif

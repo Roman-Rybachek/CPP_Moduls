@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/23 08:08:20 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 22:15:37 by jeldora          ###   ########.fr       */
+/*   Created: 2020/10/23 20:49:07 by jeldora           #+#    #+#             */
+/*   Updated: 2020/10/24 00:28:56 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 
-class Pony
+class Zombie
 {
 	private:
-		std::string		p_name;
-		int				p_legs;
-		int				p_heads;
-		int				p_tails;
-		int				p_eyes;
-
+		std::string type;
+		std::string name;
 	public:
-		void			set_legs(int count);
-		void			set_heads(int count);
-		void			set_tails(int count);
-		void			set_eyes(int count);	
-		
-		Pony(std::string name, int legs, int heads, int tails, int eyes);
-		~Pony();
-		void	run();
+		void		announce();
+		Zombie(std::string set_name, std::string set_type);
+		Zombie();
+		~Zombie();
+		void		change_name(std::string set_name);
 };
 
 #endif

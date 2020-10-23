@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ex01.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/23 08:08:20 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 22:15:37 by jeldora          ###   ########.fr       */
+/*   Created: 2020/10/23 20:38:42 by jeldora           #+#    #+#             */
+/*   Updated: 2020/10/23 20:44:44 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
-
 #include <iostream>
 
-class Pony
+void		memoryLeak()
 {
-	private:
-		std::string		p_name;
-		int				p_legs;
-		int				p_heads;
-		int				p_tails;
-		int				p_eyes;
+	std::string*	panther = new std::string("String panther");
+	std::cout << *panther << std::endl;
+	delete panther;
+}
 
-	public:
-		void			set_legs(int count);
-		void			set_heads(int count);
-		void			set_tails(int count);
-		void			set_eyes(int count);	
-		
-		Pony(std::string name, int legs, int heads, int tails, int eyes);
-		~Pony();
-		void	run();
-};
-
-#endif
+int			main()
+{
+	memoryLeak();
+	return (0);
+}	

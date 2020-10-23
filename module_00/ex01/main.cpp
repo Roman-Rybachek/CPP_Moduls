@@ -6,13 +6,13 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 22:10:43 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 05:32:30 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/23 07:21:57 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mainheader.hpp"
 
-void	add(Contact *list)
+void			add(Contact *list)
 {
 	for (int i = 0; i < 8; i++)
 	{
@@ -30,7 +30,20 @@ void	add(Contact *list)
 	}
 }
 
-int		main()
+std::string		safe_write()
+{
+	std::string str;
+
+	std::cin >> str;
+	if (str.empty())
+	{
+		std::cout << "\nOh my God, it is a Ctrl+D ?!\n";
+		exit(0);
+	}
+	return (str);
+}
+
+int				main()
 {
 	std::string command;
 	Contact list[8];
@@ -48,6 +61,11 @@ int		main()
 			search(list);
 		else if (command == "EXIT")
 			return (0);
+		else if (command.empty())
+		{
+			std::cout << "Oh my God, it is a Ctrl+D ?!\n";
+			return (0);
+		}
 		else
 			continue ;
 	}

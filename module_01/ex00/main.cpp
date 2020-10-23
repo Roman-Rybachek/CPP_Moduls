@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mainheader.hpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 21:41:16 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 07:14:42 by jeldora          ###   ########.fr       */
+/*   Created: 2020/10/23 08:08:13 by jeldora           #+#    #+#             */
+/*   Updated: 2020/10/23 20:29:45 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include <iomanip>
-#include <cstdlib>
+#include "Pony.hpp"
 
-Contact		filling();
-void		add(Contact *list);
-void		search(Contact *list);
-void		search_details(Contact *list);
-std::string	safe_write();
+void		ponyOnTheHeap()
+{
+	Pony	*pony = new Pony("First", 4, 1, 1, 2);
+	pony->run();
+	std::cout << "Some times later...\n";
+	delete pony;
+}
+
+void		ponyOnTheStack()
+{
+	Pony	pony = Pony("Second", 4, 1, 1, 2);
+	pony.run();
+	std::cout << "Some times later...\n";
+}
+
+int		main()
+{
+	ponyOnTheHeap();
+	std::cout << "---\n";
+	ponyOnTheStack();
+	return (0);
+}

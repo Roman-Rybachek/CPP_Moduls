@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 02:58:27 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 05:59:36 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/23 06:16:40 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	put_contact_info(Contact elem, int i)
 {
 	std::string num;
 	
-	num = std::to_string(i);
+	num = std::to_string(i + 1);
 	put_10_chars(num);
 	put_10_chars(elem.get_field("first_name"));
 	put_10_chars(elem.get_field("last_name"));
@@ -61,7 +61,7 @@ void	search(Contact *list)
 {
 	if (list[0].is_init() == false)
 	{
-		std::cout << "Nothing";
+		std::cout << "Nothing\n";
 		return ;
 	}
 	for (int i = 0; i < 8; i++)

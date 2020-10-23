@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 04:36:07 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 06:01:06 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/23 07:19:07 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,34 @@
 
 void	search_details(Contact *list)
 {
-	int		index;
+	int			index;
+	std::string tmp;
+	char		*c_str;
 
 	std::cout << "Input index of contact to view full information.\n";
-	std::cin >> index;
-	if (index > 7 || index < 0)
+	tmp = safe_write();
+	c_str = (char*)tmp.c_str();
+	while (c_str && *c_str)
 	{
-		std::cout << "Invalid index. Try to input index 0-7\n";
+		if (!std::isdigit(*c_str))
+		{
+			std::cout << "Index contain character.\n";
+			return ;
+		}
+		c_str++;
+	}
+	index = atoi(tmp.c_str());
+	if (index > 8 || index < 1)
+	{
+		std::cout << "Invalid index. Try to input index 1-8\n";
 		return ;
 	}
-
+	index -= 1;
+	if (list[index].is_init() == false)
+	{
+		std::cout << "Element of list is not created\n";
+		return ;
+	}
 	std::cout << "First name: " << list[index].get_field("first_name") << std::endl;
 	std::cout << "Last name: " << list[index].get_field("last_name") << std::endl;
 	std::cout << "Nickname: " << list[index].get_field("nickname") << std::endl;

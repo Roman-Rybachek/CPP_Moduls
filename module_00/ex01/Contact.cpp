@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 05:00:58 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 05:52:48 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/23 07:17:12 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 void	Contact::filling()
 {
 	std::cout << "First name: ";
-	std::cin >> first_name;
+	first_name = safe_write();
 	std::cout << "Last name: ";
-	std::cin >> last_name;
+	last_name = safe_write();
 	std::cout << "Nickname: ";
-	std::cin >> nickname;
+	nickname = safe_write();
 	std::cout << "Login: ";
-	std::cin >> login;
+	login = safe_write();
 	std::cout << "Postal address: ";
-	std::cin >> postal_address;
+	postal_address = safe_write();
 	std::cout << "Email address: ";
-	std::cin >> email_address;
+	email_address = safe_write();
 	std::cout << "Phone number: ";
-	std::cin >> phone_number;
+	phone_number = safe_write();
 	std::cout << "Birthday date: ";
-	std::cin >> birthday_date;
+	birthday_date = safe_write();
 	std::cout << "Favorite meal: ";
-	std::cin >> favorite_meal;
+	favorite_meal = safe_write();
 	std::cout << "Underwear color: ";
-	std::cin >> underwear_color;
+	underwear_color = safe_write();
 	std::cout << "Darkest secret: ";
-	std::cin >> darkest_secret;
+	darkest_secret = safe_write();
 	init = true;
 }
 
@@ -60,6 +60,7 @@ void		Contact::check_name()
 		favorite_meal.clear();
 		underwear_color.clear();
 		darkest_secret.clear();
+		return ;
 	}
 }
 

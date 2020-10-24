@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 02:23:44 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/24 23:38:28 by jeldora          ###   ########.fr       */
+/*   Created: 2020/10/24 04:50:45 by jeldora           #+#    #+#             */
+/*   Updated: 2020/10/24 04:54:10 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-std::string		Human::identify()
-{
-	return (little_brain.identify());
-}
+#include <string>
+#include <iostream>
 
-Brain			Human::getBrain()
+class Weapon
 {
-	return(little_brain);
-}
+	private:
+		std::string		type;
+	public:
+		std::string		getType();
+		void			setType(std::string new_type);
+};
+
+#endif

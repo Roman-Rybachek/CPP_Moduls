@@ -6,22 +6,18 @@
 #    By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 20:20:36 by jeldora           #+#    #+#              #
-#    Updated: 2020/10/24 23:27:33 by jeldora          ###   ########.fr        #
+#    Updated: 2020/10/24 04:49:37 by jeldora          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC =		clang++
-NAME =		ex05
+NAME =		ex06
 FLAGS =		-Wall -Wextra -Werror -o $(NAME)
-SRCS =		Human.cpp \
-			main.cpp \
-			Brain.cpp
-
-HEADERS = Human.hpp Brain.hpp
+SRCS =		 
 
 all: $(NAME)
 
-$(NAME): $(SRCS) $(HEADERS)
+$(NAME): $(SRCS)
 	$(CC) $(FLAGS) $(SRCS)
 
 clean:

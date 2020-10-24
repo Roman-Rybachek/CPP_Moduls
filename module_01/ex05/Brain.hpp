@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 02:23:46 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/24 04:42:57 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/24 23:36:53 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Brain
 		int				iq;
 		unsigned long	addr;
 	public:
-		std::string identify();
+		std::string identify() const;
 		Brain();
 };
 

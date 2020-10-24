@@ -1,23 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 02:23:44 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/24 23:38:28 by jeldora          ###   ########.fr       */
+/*   Created: 2020/10/24 04:50:16 by jeldora           #+#    #+#             */
+/*   Updated: 2020/10/24 04:56:06 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "Weapon.hpp"
 
-std::string		Human::identify()
-{
-	return (little_brain.identify());
-}
-
-Brain			Human::getBrain()
-{
-	return(little_brain);
-}

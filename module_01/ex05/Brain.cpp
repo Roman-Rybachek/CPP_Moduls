@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 02:23:49 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/24 04:43:29 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/24 23:36:43 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Brain::Brain()
 	addr = (unsigned long)this;
 }
 
-std::string		Brain::identify()
+std::string		Brain::identify() const
 {
 	std::string res = "0x";
 	res += std::to_string(addr);

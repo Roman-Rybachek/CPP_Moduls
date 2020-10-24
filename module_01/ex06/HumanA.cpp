@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 04:50:16 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/25 01:30:58 by jeldora          ###   ########.fr       */
+/*   Created: 2020/10/25 00:25:49 by jeldora           #+#    #+#             */
+/*   Updated: 2020/10/25 02:19:51 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanA.hpp"
 
-Weapon::Weapon(std::string set_type)
+HumanA::HumanA(std::string set_name, Weapon &set_weapon) : weapon(set_weapon)
 {
-	type = set_type;
+	name = set_name;
 }
 
-const std::string	Weapon::getType()
+void	HumanA::attack()
 {
-	const std::string& ref = type;
-	return (ref);
-}
-
-void				Weapon::setType(std::string set_type)
-{
-	if (!set_type.empty())
-		type = set_type;
-	else
-		std::cout << "Weapon must to has type";
+	std::cout << name << " attack with his " << weapon.getType() << std::endl;
 }

@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 04:50:16 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/25 01:30:58 by jeldora          ###   ########.fr       */
+/*   Created: 2020/10/25 00:02:25 by jeldora           #+#    #+#             */
+/*   Updated: 2020/10/25 01:28:50 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string set_type)
+int main()
 {
-	type = set_type;
-}
-
-const std::string	Weapon::getType()
-{
-	const std::string& ref = type;
-	return (ref);
-}
-
-void				Weapon::setType(std::string set_type)
-{
-	if (!set_type.empty())
-		type = set_type;
-	else
-		std::cout << "Weapon must to has type";
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

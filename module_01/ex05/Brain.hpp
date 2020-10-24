@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 02:23:46 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/24 02:44:39 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/24 04:42:57 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 class Brain
 {
 	private:
-		int		iq;
+		int				iq;
+		unsigned long	addr;
 	public:
 		std::string identify();
 		Brain();

@@ -6,11 +6,13 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 02:23:49 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/24 02:50:19 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/24 04:43:29 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
+#include <cstdlib>
+#include <string>
 
 Brain::Brain()
 {
@@ -20,10 +22,12 @@ Brain::Brain()
 		iq = 200;
 	if (iq < 0)
 		iq = 0;
-	std::cout << iq << std::endl;
+	addr = (unsigned long)this;
 }
 
 std::string		Brain::identify()
 {
-	
+	std::string res = "0x";
+	res += std::to_string(addr);
+	return (res);
 }

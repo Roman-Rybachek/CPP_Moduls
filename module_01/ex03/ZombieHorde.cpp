@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 00:11:54 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/24 01:22:48 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/25 10:22:16 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*random_name(int r)
 	int		tmp;
 	time_t	curr_time;
 
-	srand(static_cast<unsigned int>(time(0)));
+	srand((time(0)));
 	curr_time = time(NULL);
 	for (int i = 0; i < 6; i++)
 	{
@@ -40,7 +40,7 @@ char	*random_name(int r)
 ZombieHorde::ZombieHorde(int n)
 {
 	count = n;
-	horde = new Zombie[n];
+	horde = Zombie[n];
 
 	for(int i = 0; i < n; i++)
 	{

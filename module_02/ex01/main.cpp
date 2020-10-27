@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 00:44:53 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/27 06:07:43 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/27 06:26:41 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		main(void)
 {
 	Fixed a = Fixed();
 	Fixed const b(10);
-	Fixed const c(42.42f);
+	Fixed const c(42.490902f);
 	Fixed const d(b);
 	a = Fixed(1234.4321f);
 	std::cout << "a is " << a << std::endl;

@@ -1,28 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 00:10:37 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/25 10:22:06 by jeldora          ###   ########.fr       */
+/*   Created: 2020/10/27 20:34:08 by jeldora           #+#    #+#             */
+/*   Updated: 2020/10/27 20:34:09 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEHORDE_HPP
-#define ZOMBIEHORDE_HPP
-#include "Zombie.hpp"
-
-class ZombieHorde
-{
-	private:
-		Zombie *horde;
-		int		count;
-	public:
-		void	announce();
-				ZombieHorde(int n);
-				~ZombieHorde();
-};
-
-#endif

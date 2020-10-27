@@ -6,9 +6,12 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 00:46:30 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/27 01:10:27 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/27 06:09:29 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 class Fixed
 {
@@ -19,7 +22,8 @@ class Fixed
 		Fixed();
 		Fixed(const Fixed &copy);
 		~Fixed();
-		Fixed &operator= (Fixed &any_value);
+		Fixed &operator= (Fixed const &any_value);
 		int getRawBits() const;
 		void setRawBits(int const raw);
 };
+#endif

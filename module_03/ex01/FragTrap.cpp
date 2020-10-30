@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 20:34:08 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/28 10:24:08 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/30 21:05:22 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ FragTrap::FragTrap(std::string set_name)
 	max_hit_points = 100;
 	level = 1;
 	name = set_name;
-	melee_attack_damage = 50;
-	range_attack_damage = 40;
-	armor_damage_reduction = 20;
+	melee_attack_damage = 30;
+	range_attack_damage = 20;
+	armor_damage_reduction = 5;
 	std::cout << YELLOW << set_name << " robot came to destroy you!\n" << RESET;
 	random = 1;
 }
@@ -37,8 +37,8 @@ FragTrap::FragTrap()
 	level = 1;
 	name = "Unnamed";
 	melee_attack_damage = 30;
-	range_attack_damage = 15;
-	armor_damage_reduction = 20;
+	range_attack_damage = 20;
+	armor_damage_reduction = 5;
 	std::cout << YELLOW << "Unnamed robot came to destroy you!\n" << RESET;
 	random = 1;
 }
@@ -75,7 +75,7 @@ void		FragTrap::takeDamage(unsigned int amount)
 							<< RED << " DAMAGE for " << RESET << name << "\n";
 	if ((unsigned int)armor_damage_reduction < amount)
 	{
-		std::cout << amount - armor_damage_reduction << CYAN \
+		std::cout << armor_damage_reduction << CYAN \
 					<< " damage blocked. Not bad.\n" << RESET;
 		amount -= armor_damage_reduction;
 		energy_points += armor_damage_reduction;

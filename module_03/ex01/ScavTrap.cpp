@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 20:34:08 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/28 10:26:37 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/30 21:06:15 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ ScavTrap::ScavTrap(std::string set_name)
 {
 	hit_points = 100;
 	max_hit_points = 100;
-	energy_points = 100;
-	max_hit_points = 100;
+	energy_points = 50;
+	max_energy_points = 50;
 	level = 1;
 	name = set_name;
-	melee_attack_damage = 50;
-	range_attack_damage = 40;
-	armor_damage_reduction = 20;
+	melee_attack_damage = 20;
+	range_attack_damage = 15;
+	armor_damage_reduction = 3;
 	std::cout << YELLOW << set_name << " has been spawned to proctect lair.\n" << RESET;
 	random = 1;
 }
@@ -32,13 +32,14 @@ ScavTrap::ScavTrap()
 {
 	hit_points = 100;
 	max_hit_points = 100;
-	energy_points = 100;
-	max_hit_points = 100;
+	energy_points = 50;
+	max_energy_points = 50;
 	level = 1;
 	name = "Unnamed";
-	melee_attack_damage = 30;
+	melee_attack_damage = 20;
 	range_attack_damage = 15;
-	armor_damage_reduction = 20;
+	armor_damage_reduction = 3;
+
 	std::cout << YELLOW << "Unnamed ScavTrap has been spawnd to proctect lair.\n" << RESET;
 	random = 1;
 }
@@ -74,7 +75,7 @@ void		ScavTrap::takeDamage(unsigned int amount)
 	std::cout << name << " take " << RED << amount << RESET << "\n";
 	if ((unsigned int)armor_damage_reduction < amount)
 	{
-		std::cout << amount - armor_damage_reduction << CYAN \
+		std::cout << armor_damage_reduction << CYAN \
 					<< " damage blocked \n" << RESET;
 		amount -= armor_damage_reduction;
 		energy_points += armor_damage_reduction;

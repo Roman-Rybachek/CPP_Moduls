@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 20:34:08 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/30 20:39:50 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/10/30 21:07:50 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void		ClapTrap::takeDamage(unsigned int amount)
 	std::cout << amount << RED << " DAMAGE for " << RESET << name << "\n";
 	if ((unsigned int)armor_damage_reduction < amount)
 	{
-		std::cout << amount - armor_damage_reduction << CYAN \
+		std::cout << armor_damage_reduction << CYAN \
 					<< " damage blocked.\n" << RESET;
 		amount -= armor_damage_reduction;
 		energy_points += armor_damage_reduction;

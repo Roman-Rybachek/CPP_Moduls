@@ -6,7 +6,7 @@
 #    By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 20:20:36 by jeldora           #+#    #+#              #
-#    Updated: 2020/11/02 16:23:51 by jeldora          ###   ########.fr        #
+#    Updated: 2020/11/02 18:21:27 by jeldora          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,15 @@ SRCS =		main.cpp \
 			PowerFist.cpp \
 			Enemy.cpp \
 			SuperMutant.cpp \
-			RedScorpion.cpp
-HEADERS =	AWeapon.hpp PlasmaRifle.hpp PowerFist.hpp Enemy.hpp SuperMutant.hpp RedScorpion.hpp
+			RedScorpion.cpp \
+			Character.cpp
+HEADERS =	AWeapon.hpp PlasmaRifle.hpp PowerFist.hpp Enemy.hpp SuperMutant.hpp RedScorpion.hpp Character.hpp
 
 all: $(NAME)
 
 $(NAME): $(SRCS) $(HEADERS) Makefile
-	$(CC) $(FLAGS) $(SRCS)
-	./$(NAME)
+	@$(CC) $(FLAGS) $(SRCS)
+	@./$(NAME)
 
 clean:
 	rm -f $(NAME)

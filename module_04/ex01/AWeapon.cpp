@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 21:00:16 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/31 22:35:15 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/02 18:22:12 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ AWeapon::AWeapon()
 {
 	m_name = "Unnamed"; m_output = "*silence*";
 	m_damage = 0; m_apcost = 0;
-	std::cout << "AWeapon object " << m_name << " has been created\n";
+	//std::cout << "AWeapon object " << m_name << " has been created\n";
 }
 
 AWeapon::AWeapon(AWeapon const &copy)
 {
 	m_name = copy.m_name; m_output = copy.m_output;
 	m_damage = copy.m_damage; m_apcost = copy.m_apcost;
-	std::cout << "AWeapon object " << m_name << " has been created\n";
+	//std::cout << "AWeapon object " << m_name << " has been created\n";
 }
 
 AWeapon::AWeapon(std::string const &name, int apcost, int damage)
 {
 	m_name = name; m_apcost = apcost; m_damage = damage;
-	std::cout << "AWeapon object " << m_name << " has been created\n";
+	//std::cout << "AWeapon object " << m_name << " has been created\n";
 }
 
 AWeapon			&AWeapon::operator=(AWeapon const &any)
@@ -42,7 +42,9 @@ AWeapon			&AWeapon::operator=(AWeapon const &any)
 }
 
 AWeapon::~AWeapon()
-{std::cout << "AWeapon object " << m_name << " has been deleted\n";}
+{
+	//std::cout << "AWeapon object " << m_name << " has been deleted\n";
+}
 
 // methods
 

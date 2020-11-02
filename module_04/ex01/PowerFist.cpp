@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 21:41:57 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/31 22:54:50 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/02 18:24:00 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,19 @@
 PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
 {
 	m_output = "* pshhh... SBAM! *\n";
-	std::cout << "PowerFist with name \"" << m_name << "\" has been spawned\n";
+	//std::cout << "PowerFist with name \"" << m_name << "\" has been spawned\n";
 }
 
 PowerFist::PowerFist(PowerFist const &copy) : AWeapon(copy.m_name, copy.m_damage, copy.m_apcost)
 {
 	m_output = copy.m_output;
-	std::cout << "PowerFist with name \"" << m_name << "\" has been spawned\n";
+	//std::cout << "PowerFist with name \"" << m_name << "\" has been spawned\n";
 }
 
 PowerFist::~PowerFist()
-{std::cout << "PowerFist with name \"" << m_name << "\" has been deleted\n";}
+{
+	//std::cout << "PowerFist with name \"" << m_name << "\" has been deleted\n";
+}
 
 PowerFist		&PowerFist::operator=(PowerFist const &copy)
 {

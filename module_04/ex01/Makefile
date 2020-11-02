@@ -6,7 +6,7 @@
 #    By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 20:20:36 by jeldora           #+#    #+#              #
-#    Updated: 2020/11/02 18:21:27 by jeldora          ###   ########.fr        #
+#    Updated: 2020/11/02 22:44:15 by jeldora          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,11 @@ SRCS =		main.cpp \
 			Enemy.cpp \
 			SuperMutant.cpp \
 			RedScorpion.cpp \
-			Character.cpp
-HEADERS =	AWeapon.hpp PlasmaRifle.hpp PowerFist.hpp Enemy.hpp SuperMutant.hpp RedScorpion.hpp Character.hpp
+			Character.cpp \
+			Creeper.cpp \
+			DiamondSword.cpp
+HEADERS =	AWeapon.hpp PlasmaRifle.hpp PowerFist.hpp Enemy.hpp SuperMutant.hpp \
+			RedScorpion.hpp Character.hpp Creeper.hpp DiamondSword.hpp 
 
 all: $(NAME)
 

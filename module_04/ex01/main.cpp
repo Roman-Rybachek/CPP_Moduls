@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 22:17:31 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/02 18:39:00 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/02 22:45:34 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "PowerFist.hpp"
 #include "RedScorpion.hpp"
 #include "Character.hpp"
+#include "Creeper.hpp"
+#include "DiamondSword.hpp"
 #include <iostream>
 
 int main()
@@ -37,6 +39,7 @@ int main()
 	std::cout << *me;
 	me->attack(b);
 	std::cout << *me;
+
 	std::cout << "-----------------------------\n";
 	Enemy* a = new SuperMutant();
 	std::cout << a->getType() << " have " << a->getHP() << "HP\n";
@@ -51,5 +54,24 @@ int main()
 	me->attack(a);
 	std::cout << "Ap is " << me->getAP() << "\n";
 	std::cout << a->getType() << " have " << a->getHP() << "HP\n";
+	me->recoverAP();
+	me->recoverAP();
+	me->recoverAP();
+	me->recoverAP();
+	me->recoverAP();
+	me->attack(a);
+	me->attack(a);
+	me->attack(a);
+	
+	std::cout << "-----------------------------\n";
+	Enemy *c = new Creeper();
+	AWeapon *sword = new DiamondSword();
+	me->equip(sword);
+	me->recoverAP();
+	me->recoverAP();
+	me->attack(c);
+	me->attack(c);
+
+	
 	return 0;
 }

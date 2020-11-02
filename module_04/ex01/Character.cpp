@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:14:31 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/02 18:28:19 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/02 22:22:59 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,12 @@ Character	&Character::operator=(const Character &copy)
 void				Character::recoverAP()
 {
 	m_ap += 10;
-	if (m_ap >= 100)
+	std::cout << "+ 10 AP\n";
+	if (m_ap >= 40)
+	{
 		m_ap = 40;
+		std::cout << "AP is full\n";
+	}
 }
 
 void 				Character::equip(AWeapon* weapon)
@@ -57,11 +61,16 @@ void 				Character::equip(AWeapon* weapon)
 
 void 				Character::attack(Enemy* enemy)
 {
+	if (enemy == NULL)
+	{
+		std::cout << "Enemy already dead!\n";
+		return ;
+	}
 	if (m_weapon == NULL)
 	{
 		std::cout << "No weapon!\n";
 		return ;
-	}
+	}	
 	if (m_ap >= m_weapon->getAPCost())
 		m_ap -= m_weapon->getAPCost();
 	else
@@ -73,7 +82,9 @@ void 				Character::attack(Enemy* enemy)
 	m_weapon->attack();
 	enemy->takeDamage(m_weapon->getDamage());
 	if (enemy->getHP() <= 0)
+	{
 		delete enemy;
+	}
 }
 
 std::string const	&Character::getName() const

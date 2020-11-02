@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 22:58:32 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/31 23:57:26 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/02 15:02:14 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Enemy
 		virtual ~Enemy();
 		Enemy		&operator=(Enemy const &any);
 		// Methods
-		std::string	const	getType() const;
+		std::string	const	&getType() const;
 		int					getHP() const;
 		virtual void		takeDamage(int);
 };

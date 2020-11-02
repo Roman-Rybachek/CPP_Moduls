@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 22:58:29 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/01 00:20:35 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/02 15:23:49 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Enemy::~Enemy()
 {std::cout << "Enemy object " << m_type << " has been deleted\n";}
 
 Enemy				&Enemy::operator=(Enemy const &any)
-{m_hp = any.m_hp; m_type = any.m_type;}
+{m_hp = any.m_hp; m_type = any.m_type; return (*this);}
 
 // Methods
 
@@ -48,7 +48,7 @@ int					Enemy::getHP() const
 
 void				Enemy::takeDamage(int value)
 {
-	if (value == 0) return ;
+	if (value <= 0) return ;
 	m_hp -= value;
 	if (m_hp < 0) m_hp = 0;
 	std::cout << "Object Enemy with type " << m_type \

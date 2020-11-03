@@ -1,22 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 23:50:01 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/03 18:20:50 by jeldora          ###   ########.fr       */
+/*   Created: 2020/11/03 19:53:37 by theuser           #+#    #+#             */
+/*   Updated: 2020/11/04 00:04:33 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Ice.hpp"
 
-class ISquad
+Ice::Ice() : AMateria()
 {
-	public:
-		virtual ~ISquad() {}
-		virtual int getCount() const = 0;
-		virtual ISpaceMarine* getUnit(int) const = 0;
-		virtual int push(ISpaceMarine*) = 0;
-};
+	str1 = "*shoots an ice bolt at ";
+	str2 = " *\n";
+	m_type = "ice";
+}
+
+Ice::~Ice()
+{
+}
+
+Ice::Ice(const Ice &copy) : AMateria()
+{
+	(void)copy;
+	str1 = "*shoots an ice bolt at ";
+	str2 = " *\n";
+	m_type = "ice";
+}
+
+Ice	&Ice::operator=(const Ice &copy)
+{
+	(void)copy;
+	return (*this);
+}
+
+AMateria* Ice::clone() const
+{
+	AMateria *materia = new Ice;
+	return (materia);
+}

@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 23:50:01 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/03 18:20:50 by jeldora          ###   ########.fr       */
+/*   Created: 2020/11/03 19:53:37 by theuser           #+#    #+#             */
+/*   Updated: 2020/11/03 22:57:53 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef ICE_HPP
+# define ICE_HPP
+# include <iostream>
+# include "AMateria.hpp"
 
-class ISquad
+class Ice : public AMateria
 {
 	public:
-		virtual ~ISquad() {}
-		virtual int getCount() const = 0;
-		virtual ISpaceMarine* getUnit(int) const = 0;
-		virtual int push(ISpaceMarine*) = 0;
+		Ice();
+		Ice(const Ice &copy);
+		~Ice();
+		Ice &operator=(const Ice &copy);
+
+		AMateria* clone() const;
+	private:
 };
+
+#endif

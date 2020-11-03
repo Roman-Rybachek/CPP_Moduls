@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   Squad.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 23:50:01 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/03 18:20:50 by jeldora          ###   ########.fr       */
+/*   Created: 2020/11/03 16:50:25 by theuser           #+#    #+#             */
+/*   Updated: 2020/11/03 18:21:28 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef SQUAD_HPP
+# define SQUAD_HPP
+# include <iostream>
+# include "ISpaceMarine.hpp"
+# include "ISquad.hpp"
 
-class ISquad
+class Squad : public ISquad
 {
+	private:
+		ISpaceMarine	**m_units;
+		int				m_count;
+
 	public:
-		virtual ~ISquad() {}
-		virtual int getCount() const = 0;
-		virtual ISpaceMarine* getUnit(int) const = 0;
-		virtual int push(ISpaceMarine*) = 0;
+		Squad();
+		Squad(const Squad &copy);
+		~Squad();
+		Squad &operator=(const Squad &copy);
+
+		int				getCount() const;
+		ISpaceMarine* 	getUnit(int) const;
+		int				push(ISpaceMarine *unit);
+
 };
+
+#endif

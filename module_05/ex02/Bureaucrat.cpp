@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 13:28:01 by theuser           #+#    #+#             */
-/*   Updated: 2020/11/04 15:06:34 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/05 18:54:36 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,20 @@ std::ostream	&operator<<(std::ostream &os, Bureaucrat const &any)
 {
 	os <<any.getName() << ", bureaucrat grade " << any.getGrade() << ".\n";
 	return (os);
+}
+
+void			Bureaucrat::signForm(Form &form)
+{
+	if (m_grade <= form.getSignGrade())
+	{
+		form.beSigned(*this);
+	}
+	else
+	{std::cout << m_name << " cannot sign " << form.getName() \
+							<< " because his grade too low\n";}
+}
+
+void			Bureaucrat::executeForm(Form const & form)
+{
+	form.execute(*this);
 }

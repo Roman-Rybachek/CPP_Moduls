@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 02:17:29 by theuser           #+#    #+#             */
-/*   Updated: 2020/11/07 03:14:16 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/07 15:09:21 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ class Array
 		~Array();
 		Array &operator=(const Array &copy);
 
-		int		getLen() const;
+		unsigned int	getLen() const;
+		T				&operator[](unsigned int index) const;
 	private:
-		T	*m_arr;
-		int	m_length;
+		T				*m_arr;
+		unsigned int	m_length;
 };
 
 #endif

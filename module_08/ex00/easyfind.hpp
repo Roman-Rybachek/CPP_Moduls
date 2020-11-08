@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 13:23:25 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/07 23:54:35 by jeldora          ###   ########.fr       */
+/*   Created: 2020/11/07 18:01:11 by jeldora           #+#    #+#             */
+/*   Updated: 2020/11/07 20:15:29 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
+#include <algorithm>
 
-class Data
+template <typename T>
+bool	easyfind(T &data, int value)
 {
-	public:
-		std::string str1;
-		int			value;
-		std::string str2;
-};
+	typename T::iterator it;
+	it = std::find(data.begin(), data.end(), value);
+	if (it == data.end())
+	{
+		std::cout << "Not found\n";
+		return (false);
+	}
+	std::cout << "Found\n";
+	return (true);
+}

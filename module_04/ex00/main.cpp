@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 00:51:31 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/31 19:49:29 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/09 18:42:32 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@
 
 int		main()
 {
+	Sorcerer a[3];
+	for (size_t i = 0; i < 3; i++)
+	{
+		std::cout << a[i] << "\n";
+	}
+
 	// std::cout <<YELLOW;
 	// Sorcerer	a = Sorcerer();
 	// std::cout <<RESET;
@@ -40,7 +46,7 @@ int		main()
 	// a.polymorph(b);
 	// std::cout <<RESET;
 	// std::cout << std::endl;
-
+/*
 	Sorcerer *robert = new Sorcerer("Robert", "the Magnificent");
 	Victim *jim = new Victim("Jimmy");
 	Peon *joe = new Peon("Joe");
@@ -63,6 +69,6 @@ int		main()
 	std::cout << *c;
 	b.polymorph(*c);
 	delete c;
-	std::cout << "---------------------------------------\n";
+	std::cout << "---------------------------------------\n";*/
 	return (0);
 }

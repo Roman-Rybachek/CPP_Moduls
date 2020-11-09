@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 05:00:58 by jeldora           #+#    #+#             */
-/*   Updated: 2020/10/23 07:17:12 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/09 18:19:38 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,9 @@ std::string Contact::get_field(std::string field)
 		return (darkest_secret);
 	else
 		return ("empty");
+}
+
+Contact::Contact()
+{
+	init = false;
 }

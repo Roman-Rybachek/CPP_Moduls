@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 17:01:46 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/08 20:13:43 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/08 22:27:22 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,9 @@ class span
 		class TooFewElements : public std::exception
 		{const char* what() const throw();};
 
-		/*int		longestSpan();
-		int		shortestSpan();*/
+		int		longestSpan();
+		int		shortestSpan();
 
-		//int		&operator[](unsigned int index) const;
 	private:
 		span();
 		unsigned int		m_length;

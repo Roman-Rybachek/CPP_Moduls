@@ -6,20 +6,20 @@
 #    By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 20:20:36 by jeldora           #+#    #+#              #
-#    Updated: 2020/11/09 00:01:10 by jeldora          ###   ########.fr        #
+#    Updated: 2020/11/09 00:00:46 by jeldora          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC =		clang++
-NAME =		ex01
-FLAGS =		-Wall -Wextra -Werror -g -std=c++98
-SRCS =		main1.cpp span.cpp main2.cpp
-HEADERS =	span.hpp
+NAME =		ex02
+FLAGS =		-Wall -Wextra -Werror -g -std=c++98 -o $(NAME)
+SRCS =		main.cpp \
+HEADERS =
 
 all: $(NAME)
 
 $(NAME): $(SRCS) $(HEADERS) Makefile
-	@$(CC) $(FLAGS) -o test1 main1.cpp span.cpp
-	@$(CC) $(FLAGS) -o test2 main2.cpp span.cpp
+	@$(CC) $(FLAGS) $(SRCS)
+	@./$(NAME)
 clean:
-	rm -f test1 test2
+	rm -f $(NAME)

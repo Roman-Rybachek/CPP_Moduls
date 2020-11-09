@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 17:01:45 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/08 22:40:02 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/10 00:28:59 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,17 @@ int		span::shortestSpan()
 	}
 	std::cout << "Shortest span: " << res << "\n";
 	return (res);
+}
+
+
+int		&span::operator[](unsigned int index)
+{
+	if (index > m_length)
+		throw std::exception();
+	if (index >= m_arr.size())
+	{
+		index = m_arr.size();
+		m_arr.push_back(0);
+	}
+	return (m_arr[index]);
 }

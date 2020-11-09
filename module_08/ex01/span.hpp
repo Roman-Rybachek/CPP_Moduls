@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 17:01:46 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/08 22:27:22 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/10 00:23:23 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class span
 		int		longestSpan();
 		int		shortestSpan();
 
+		int		&operator[](unsigned int index);
 	private:
 		span();
 		unsigned int		m_length;

@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 15:48:28 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/09 20:11:38 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/09 23:53:47 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,28 @@ class MutantStack : public std::stack<T>
 			private:
 				MutantStack		&m_current;
 				unsigned int	m_index;
+				iterator();
 
 			public:
-				iterator(const MutantStack &current, unsigned int index);
+				iterator(MutantStack &current, unsigned int index);
 				iterator(iterator const &copy);
 				iterator &operator++();
 				iterator &operator--();
-				iterator &operator=(iterator const &any);
 				bool operator==(iterator const &other);
 				bool operator!=(iterator const &other);
 				T &operator*();
+
+				~iterator();
 		};
 
-	iterator	begin();
-	iterator	end();
+		iterator	begin();
+		iterator	end();
+		MutantStack();
+		~MutantStack();
 
 	private:
+		MutantStack(const MutantStack &copy);
+		MutantStack &operator=(const MutantStack &copy);
 };
 
 #endif

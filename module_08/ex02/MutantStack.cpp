@@ -6,7 +6,7 @@
 /*   By: jeldora <jeldora@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 15:48:28 by jeldora           #+#    #+#             */
-/*   Updated: 2020/11/09 20:24:27 by jeldora          ###   ########.fr       */
+/*   Updated: 2020/11/09 23:54:30 by jeldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 #include <exception>
 
 template <typename T>
-MutantStack<T>::iterator::iterator(const MutantStack &current, unsigned int index)
+MutantStack<T>::iterator::iterator(MutantStack<T> &current, unsigned int index) : m_current(current)
 {
-	m_current = current;
 	if (index > m_current.size())
 		throw std::exception();
 	m_index = index;
@@ -24,11 +23,15 @@ MutantStack<T>::iterator::iterator(const MutantStack &current, unsigned int inde
 
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin()
-{return (iterator(*this, 0));}
+{
+	return (iterator(*this, 0));
+}
 
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::end()
-{return (iterator(*this, *this->size()));}
+{
+	return (iterator(*this, this->size()));
+}
 
 template <typename T>
 typename MutantStack<T>::iterator &MutantStack<T>::iterator::operator++()
@@ -67,16 +70,40 @@ T &MutantStack<T>::iterator::operator*()
 {return (m_current.c[m_index]);}
 
 template <typename T>
-typename MutantStack<T>::iterator &MutantStack<T>::iterator::operator=(iterator const &any)
+MutantStack<T>::iterator::iterator(iterator const &copy) : m_current(copy.m_current)
 {
-	m_index = any.m_index;
-	m_current = any.m_current;
+	m_index = copy.m_index;
+}
+
+template <typename T>
+MutantStack<T>::MutantStack()
+{
+}
+
+template <typename T>
+MutantStack<T>::~MutantStack()
+{
+}
+
+template <typename T>
+MutantStack<T>::MutantStack(const MutantStack<T> &copy)
+{
+	copy.size();
+}
+
+template <typename T>
+MutantStack<T>	&MutantStack<T>::operator=(const MutantStack<T> &copy)
+{
+	*this = copy;
 	return (*this);
 }
 
 template <typename T>
-MutantStack<T>::iterator::iterator(iterator const &copy)
+MutantStack<T>::iterator::iterator()
 {
-	m_index = copy.m_index;
-	m_current = copy.m_current;
+}
+
+template <typename T>
+MutantStack<T>::iterator::~iterator()
+{
 }
